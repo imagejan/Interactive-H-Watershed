@@ -10,10 +10,8 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,23 +30,18 @@ import ij.gui.ImageWindow;
 import ij.gui.Overlay;
 import ij.gui.ScrollbarWithLabel;
 import ij.measure.Calibration;
-import ij.plugin.Duplicator;
-import ij.plugin.ImageCalculator;
 import ij.plugin.LutLoader;
 import ij.process.FloatProcessor;
 import ij.process.ImageProcessor;
 import ij.process.LUT;
 import ij.plugin.frame.Recorder;
+
 import net.imagej.ImageJ;
 import net.imglib2.Cursor;
 import net.imglib2.RandomAccessibleInterval;
-import net.imglib2.RealRandomAccess;
 import net.imglib2.img.Img;
-import net.imglib2.img.ImgFactory;
 import net.imglib2.img.array.ArrayImgFactory;
 import net.imglib2.img.display.imagej.ImageJFunctions;
-import net.imglib2.interpolation.randomaccess.NearestNeighborInterpolatorFactory;
-import net.imglib2.type.NativeType;
 import net.imglib2.type.numeric.NumericType;
 import net.imglib2.type.numeric.RealType;
 import net.imglib2.type.numeric.integer.IntType;
@@ -69,7 +62,7 @@ import org.scijava.ItemIO;
 import org.scijava.ItemVisibility;
 
 import de.mpicbg.scf.InteractiveWatershed.HWatershedLabeling.Connectivity;
-import de.mpicbg.scf.InteractiveWatershed.Utils.Interpolator;
+
 
 /**
  * An plugin allowing to explore the watershed from hMaxima 
@@ -414,7 +407,6 @@ public class Interactive_HWatershed extends InteractiveCommand implements Previe
 				try {
 					TimeUnit.MILLISECONDS.sleep(200);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				preview();
